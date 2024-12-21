@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
         std::string removedComm = line.substr(0, comment);
         if (removedComm.empty()) continue;
         // Remove spaces
-        std::string::iterator iter = remove(removedComm.begin(), removedComm.end(), ' ');
+        auto iter = remove(removedComm.begin(), removedComm.end(), ' ');
         removedComm.erase(iter, removedComm.end());
 
         instructions.push(removedComm);

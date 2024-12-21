@@ -51,7 +51,7 @@ void SymbolTable::addLabel(const std::string& label) {
 }
 
 void SymbolTable::addVariable(const std::string& var) {
-    if (table.find(var) != table.end()) {
+    if (table.find(var) == table.end()) {
         table.insert(std::pair<std::string, uint16_t>(var, VariableCounter));
         VariableCounter++;
     }
