@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 
     // Output file
     std::ofstream fout;
-    std::string::size_type idx = finName.find_last_of('.');  // find the base name
+    std::string::size_type idx = finName.find_last_of('.');
     std::string foutname = finName.substr(0, idx) + ".hack";
     fout.open(foutname);
 
@@ -53,9 +53,8 @@ int main(int argc, char* argv[]) {
             line = line.substr(idx_L + 1, idx_R - 1);
             symbolTable.addLabel(line);
             continue;
-        } else {
-            symbolTable.incLabelCounter();
         }
+        symbolTable.incLabelCounter();
         clean.push(line);
     }
 
